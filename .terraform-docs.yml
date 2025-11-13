@@ -1,0 +1,102 @@
+formatter: "markdown table"
+
+version: ">= 0.20.0, < 1.0.0"
+
+header-from: "main.tf"
+footer-from: ""
+
+recursive:
+  enabled: false
+  path: modules
+  include-main: true
+
+sections:
+  hide: [ ]
+  show: [ ]
+
+  hide-all: false
+  show-all: true
+
+content: |-
+  # Terraform module documentation 
+
+  This documentation is generated using [terraform-docs](https://terraform-docs.io/user-guide/introduction) 
+  and contains helpful information about the module's usage.
+
+  ---
+
+  ## 📦 Providers used
+
+  {{ .Providers }}
+
+  ## 🧰 Requirements
+
+  {{ .Requirements }}
+
+  ## 🧩 Modules included
+
+  {{ .Modules }}
+
+  ## 🏗️ Resources created
+
+  {{ .Resources }}
+
+  ## 🔧 Inputs
+
+  {{ .Inputs }}
+
+  ## 📤 Outputs
+
+  {{ .Outputs }}
+
+  ---
+  
+  ## Example
+
+  ```hcl
+  {{ include "examples/main.tf" }}
+  ```
+  
+  ---
+
+  ## 📚 Useful links
+
+  References to relevant documentations.
+
+  - [Terraform](https://developer.hashicorp.com/terraform/docs)
+  - [Terraform azurerm provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+  - [Microsoft Azure](https://portal.azure.com)
+  - [Microsoft Entra](https://entra.microsoft.com)
+  - [Azure DevOps](https://dev.azure.com/sudheera-jayasinghe)
+  - [Azure resource naming](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
+  - [Azure resource abbreviations](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations)
+  
+
+output:
+  file: "README.md"
+  mode: replace
+  template: |-
+    {{ .Content }} 
+
+output-values:
+  enabled: false
+  from: ""
+
+sort:
+  enabled: true
+  by: name
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: false
+  html: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
