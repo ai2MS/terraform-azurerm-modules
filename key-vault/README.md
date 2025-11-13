@@ -11,7 +11,7 @@ and contains helpful information about the module's usage.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 4.45.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 4.40.0 |
 
 ## 🧰 Requirements
 
@@ -19,8 +19,8 @@ and contains helpful information about the module's usage.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.12.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.45.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.40.0 |
 
 ## 🧩 Modules included
 
@@ -93,19 +93,17 @@ No modules.
 
 ```hcl
 terraform {
-  required_version = "~> 1.12.0"
+  required_version = "~> 1.0"
 
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 4.45.0"
+      version = "~> 4.40.0"
     }
   }
 }
 
 provider "azurerm" {
-  subscription_id = "a50bb4bb-0c03-4859-b9c0-4a0ad3ffee3a"
-
   features {}
 }
 
